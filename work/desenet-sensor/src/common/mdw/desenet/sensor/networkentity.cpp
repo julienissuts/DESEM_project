@@ -138,6 +138,8 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver & driver, const uint32_t re
                 {
                     _mpdu.printMPDU();
                     _mpdu.writePDUHeader(1,svgroup,dataSize);
+
+                    _mpdu.incrementEPDUCount();
                     _mpdu.printMPDU();
                 }
             }

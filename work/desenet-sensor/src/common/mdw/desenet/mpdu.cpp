@@ -48,15 +48,21 @@ void MPDU::writePDUHeader(uint8_t type, SvGroup svgroup, size_t dataSize)
 
 void MPDU::printMPDU()
 {
-    std::cout << "MPDU is: "<< std::endl;
+    std::cout << "MPDU is: ";
     for (int i = 0; i < 37; ++i) {
-        std::cout << static_cast<int>(*(buffer() + i))
-                  << ","
-                  << std::endl;
+        std::cout << std::hex << std::setw(2) << std::setfill('0') 
+                  << static_cast<int>(*(buffer() + i)) << " ";
     }
-
-
+    std::cout << std::endl; // Print newline after the loop
 }
+
+void MPDU::incrementEPDUCount()
+{
+    if (length() >= 7) { // Check if the buffer has at least 6 elements
+        (*(buffer() + 6))++; // Increment the 6th element
+    }
+}
+
 void MPDU::clear() {
     // Reset the PDU count to 0
     memset(buffer() + Frame::HEADER_SIZE + 1, 0, 1);

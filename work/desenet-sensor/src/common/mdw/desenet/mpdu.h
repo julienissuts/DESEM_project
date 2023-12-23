@@ -35,6 +35,7 @@ public:
     SharedByteBuffer proxy2mpdu();
     void printMPDU();
     void writePDUHeader(uint8_t type, SvGroup svgroup, size_t dataSize);
+    void incrementEPDUCount();
 };
 
 #endif // MPDU_H
