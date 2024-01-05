@@ -80,8 +80,11 @@ protected:
     NetworkInterfaceDriver * _pTransceiver;			///< Pointer to transceiver.
 
 private:
+    EventElementList eList; //stores all the events in a list
     ApplicationSyncList syncList; // list for all apps which want to receive svSyncIndications() if beacon arrives
     ApplicationPublishersArray publishers_Arr;
+
+    void evPublishRequest(EvId evid, const SharedByteBuffer &evdata);
     void svSyncRequest(AbstractApplication *app);
     bool svPublishRequest(AbstractApplication *app, SvGroup group);
 
