@@ -28,6 +28,8 @@ bool AbstractApplication::svPublishRequest(SvGroup group)
 void AbstractApplication::evPublishRequest(EvId id, const SharedByteBuffer & evData)
 {
     // TODO: Publish event data
+
+    NetworkEntity::instance().evPublishRequest(id, evData);// calls evPublishRequest of NetworkEntity
 }
 
 /**

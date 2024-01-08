@@ -8,6 +8,7 @@ JoystickApplication::JoystickApplication():evDataBuffer(1){ ////SharedBuffer(siz
 
 
 void JoystickApplication::onPositionChange(IJoystick::Position position){
+
     memcpy(evDataBuffer.data(), &position.position,sizeof(position.position));//void *memcpy(void *dest, const void *src, size_t n);
-    sensor::AbstractApplication::evPublishRequest(EVID_JOYSTICK, evDataBuffer);
+    sensor::AbstractApplication::evPublishRequest(EVID_JOYSTICK, evDataBuffer);//hier wird das event auf die Liste appended
 }
