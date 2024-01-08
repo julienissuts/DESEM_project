@@ -43,6 +43,7 @@ public:
 
     desenet::SlotNumber slotNumber() const;     ///< Returns the actual slot number.
 
+
 protected:
     /**
      * @brief Holds event information.
@@ -80,6 +81,7 @@ protected:
     NetworkInterfaceDriver * _pTransceiver;			///< Pointer to transceiver.
 
 private:
+    MPDU _mpdu;
     EventElementList eList; //stores all the events in a list
     ApplicationSyncList syncList; // list for all apps which want to receive svSyncIndications() if beacon arrives
     ApplicationPublishersArray publishers_Arr;

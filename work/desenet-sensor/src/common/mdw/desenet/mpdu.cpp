@@ -15,7 +15,7 @@ void MPDU::initialize(){
     desenet::Address temp = destination();
 
     //set the sensorID
-    _sensorID = DEFAULT_DESENET_SLOT_NUMBER;
+    _sensorID = DEFAULT_DESENET_SLOT_NUMBER;//15=0xF
     memcpy(buffer() + Frame::HEADER_SIZE, &_sensorID, 1);
 
 
@@ -24,7 +24,7 @@ void MPDU::initialize(){
 
     clear();
 
-    printMPDU();
+    //printMPDU();
 
 }
 
@@ -43,6 +43,12 @@ void MPDU::writePDUHeader(uint8_t type, SvGroup svgroup, size_t dataSize)
 
     uint8_t PDU_header = type<<7 | svgroup<<3 | dataSize;
     memset(temp.data(),PDU_header, sizeof(PDU_header));
+
+    if (length() >= 7) { // Check if the buffer has at least 6 elements
+        (*(buffer() + 6))++; // Increment the 6th element
+    }
+
+    setLength(length() + dataSize + 1); //update new length)
 }
 
 
@@ -58,12 +64,11 @@ void MPDU::printMPDU()
 
 void MPDU::incrementEPDUCount()
 {
-    if (length() >= 7) { // Check if the buffer has at least 6 elements
-        (*(buffer() + 6))++; // Increment the 6th element
-    }
+
 }
 
 void MPDU::clear() {
+    memset(buffer()+ Frame::HEADER_SIZE+1,0,1);
     // Reset the PDU count to 0
     memset(buffer() + Frame::HEADER_SIZE + 1, 0, 1);
     //it is placed one byte behind the dest addr, we write value 0 and on 1 byte

@@ -93,7 +93,7 @@ void TimeSlotManager::_stopTimer()
 	}
 }
 
-void TimeSlotManager::timerEvent(QTimerEvent * event)
+void TimeSlotManager::timerEvent(QTimerEvent * event)//certainly called when the timer is finished
 {
 	if (event->timerId() == _timerId)
 	{
@@ -101,6 +101,6 @@ void TimeSlotManager::timerEvent(QTimerEvent * event)
 		_timerId = 0;
 
 		// Inform observers
-		notify(OWN_SLOT_START);
+        notify(OWN_SLOT_START);//send the OWN_SLOT_START signal to observers
 	}
 }

@@ -15,7 +15,7 @@
 #define EPDU_COUNT_POS (SIZE_GATEWAY_ADDR + SIZE_MPDU_LEN + SIZE_DELTA_E)
 #define SIZE_PDU 7
 
-class MPDU : Frame{ // MPDU herits from Frame
+class MPDU : public Frame{ // MPDU herits from Frame
 private:
     desenet::SlotNumber _sensorID;
     uint8_t _nbrPDU;

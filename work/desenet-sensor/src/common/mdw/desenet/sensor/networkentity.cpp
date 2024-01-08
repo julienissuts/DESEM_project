@@ -87,9 +87,20 @@ bool NetworkEntity::svPublishRequest(AbstractApplication *app, SvGroup group)
 
 }
 
+void NetworkEntity::evPublishRequest(EvId evid, const SharedByteBuffer &evdata){
+    //if the joystick creates an event the event is pushed into the eList
+
+    EventElement event(evid, evdata);
+
+    eList.push_back(event);
+}
 void NetworkEntity::onTimeSlotSignal(const ITimeSlotManager &timeSlotManager, const ITimeSlotManager::SIG &signal)
 {
-
+    // !!! if correct signal comes then send mpdu
+    if(signal == timeSlotManager.OWN_SLOT_START){
+        *_pTransceiver << _mpdu;
+        _mpdu.clear();
+    }
 }
 
 /**
@@ -103,23 +114,22 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver & driver, const uint32_t re
 
     // TODO: Add your code here
 
+
+
+
+
     if(frame.type() == FrameType::Beacon){ //kontrolle ob unser frame ein beacon ist
         ledController().flashLed(0);//param = 0 damit led geflasht wird
+
 
         //mach tram to beacon mit beacon klasse
         Beacon b(frame);
         // _pTimeSlotManager->onBeaconReceived(b.slotDuration())
 
+        // send timeslot to timeslotmanager !!!
+        _pTimeSlotManager->onBeaconReceived(b.slotDuration());
 
-        for(auto& p : syncList)
-        {
-            if(p != nullptr){
-                p->svSyncIndication(b.networkTime()); //svSyncIndication(NetworkTime)
-            //we send a syncIndication to each registered app
-            }
-        }
 
-        MPDU _mpdu;
         SharedByteBuffer buff;
 
         for(desenet::SvGroup svgroup = 0; svgroup< 16; svgroup++){
@@ -129,19 +139,28 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver & driver, const uint32_t re
 
             if(publishers_Arr[svgroup]!=nullptr){
 
-                _mpdu.printMPDU();
+                //_mpdu.printMPDU();
 
                 dataSize = publishers_Arr[svgroup]->svPublishIndication(svgroup,buff);
-                _mpdu.printMPDU();
+                //_mpdu.printMPDU();
 
                 if(dataSize > 0)
                 {
-                    _mpdu.printMPDU();
-                    _mpdu.writePDUHeader(1,svgroup,dataSize);
+                    //_mpdu.printMPDU();
+                    _mpdu.writePDUHeader(0,svgroup,dataSize);//1 for SV,
 
                     _mpdu.incrementEPDUCount();
                     _mpdu.printMPDU();
                 }
+            }
+        }
+
+
+        for(auto& p : syncList)// put syncIndication after read of sampled values !!!
+        {
+            if(p != nullptr){
+                p->svSyncIndication(b.networkTime()); //svSyncIndication(NetworkTime)
+                //we send a syncIndication to each registered app
             }
         }
 
