@@ -86,12 +86,13 @@ void Factory::buildApplication()
 
     // Initialize applications
     accelerometerApplication().initialize();
-joystick().initialize();//--------------------------------------
+    joystick().initialize();//--------------------------------------
     //
     // Initialize relations
     //
-//setting observer for joystick applicaiton onPositionChange usage
-joystick().setObserver(&joystickApplication());										  
+
+    joystickApplication().initialize();// is setting observer for joystickapp and initializes joystick
+    //finally the state machine is set to the initial state
 
 #ifdef USE_DISPLAY
     char str[32];
@@ -120,7 +121,8 @@ joystick().setObserver(&joystickApplication());
     clockwork().start();
     net().start();
     accelerometerApplication().start();
-joystick().start();//--------------------------------------
+    joystickApplication().start(); //starts joystick and sends 1. event for joyapp state machine
+    //--------------------------------------
 }
 
 #ifdef TC_MESHSIM
@@ -139,7 +141,8 @@ app::AccelerometerApplication & Factory::accelerometerApplication() const
     return accelerometerApp;
 }
 
-//same as for accelerometer
+//--------------------------------------
+//make method to return joystick application
 app::JoystickApplication & Factory::joystickApplication() const{
     static app::JoystickApplication joystick;
     return joystick;
@@ -150,7 +153,9 @@ board::Accelerometer & Factory::accelerometer() const
 
     return accelerometer;
 }
-board::Joystick & Factory::joystick() const//--------------------------------------
+
+//--------------------------------------
+board::Joystick & Factory::joystick() const
 {
     return board::Joystick::instance();
 }					  

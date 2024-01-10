@@ -144,7 +144,7 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver & driver, const uint32_t re
                 {
                     //_mpdu.printMPDU();
                     _mpdu.writePDUHeader(0,svgroup,dataSize);//0 for SV,
-                    //_mpdu.printMPDU();
+                    _mpdu.printMPDU();
                 }
             }
         }
@@ -156,7 +156,7 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver & driver, const uint32_t re
             //begin() returns an iterator to first object
             _mpdu.writePDUHeader(1, eList.front().id, eList.front().data.length());// Header of added data is created
             eList.erase(eList.begin());
-            //_mpdu.printMPDU();
+            _mpdu.printMPDU();
         }
 
 
