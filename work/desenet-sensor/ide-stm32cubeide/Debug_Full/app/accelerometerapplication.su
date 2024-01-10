@@ -7,7 +7,7 @@ C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/desenet/sensor/abstractapplication.h:23:9:desenet::sensor::AbstractApplication::AbstractApplication()	16	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/desenet/sensor/abstractapplication.h:24:17:desenet::sensor::AbstractApplication::~AbstractApplication()	16	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/desenet/sensor/abstractapplication.h:24:17:virtual desenet::sensor::AbstractApplication::~AbstractApplication()	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.h:44:22:static app::Factory& app::Factory::instance()	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.h:46:22:static app::Factory& app::Factory::instance()	8	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/accelerometerapplication.cpp:9:1:app::AccelerometerApplication::AccelerometerApplication()	16	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/accelerometerapplication.cpp:15:1:app::AccelerometerApplication::~AccelerometerApplication()	16	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/accelerometerapplication.cpp:15:1:virtual app::AccelerometerApplication::~AccelerometerApplication()	16	static

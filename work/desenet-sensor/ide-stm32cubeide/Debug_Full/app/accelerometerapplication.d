@@ -65,6 +65,10 @@ app/accelerometerapplication.o: \
  C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/platform/nucleo-stm32l476rg/board/accel/accelerometer.h \
  C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/clockwork/clockwork.h \
  C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/clockwork/ttime.h \
+ C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/ide-stm32cubeide/../src/app/joystickapplication.h \
+ C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/platform/platform-common/board/interfaces/ijoystickobserver.h \
+ C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/platform/platform-common/board/interfaces/ijoystick.h \
+ C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/platform/nucleo-stm32l476rg/board/joystick.h \
  C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/ide-stm32cubeide/../src/xf/xfevent.h \
  C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/accelerometerapplication.h
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/ide-stm32cubeide/platform/nucleo-stm32l476rg/platform-config.h:
@@ -132,5 +136,9 @@ C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/c
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/platform/nucleo-stm32l476rg/board/accel/accelerometer.h:
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/clockwork/clockwork.h:
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/clockwork/ttime.h:
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/ide-stm32cubeide/../src/app/joystickapplication.h:
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/platform/platform-common/board/interfaces/ijoystickobserver.h:
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/platform/platform-common/board/interfaces/ijoystick.h:
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/platform/nucleo-stm32l476rg/board/joystick.h:
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/ide-stm32cubeide/../src/xf/xfevent.h:
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/accelerometerapplication.h:

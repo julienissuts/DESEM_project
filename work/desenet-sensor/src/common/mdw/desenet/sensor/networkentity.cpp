@@ -114,10 +114,6 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver & driver, const uint32_t re
 
     // TODO: Add your code here
 
-
-
-
-
     if(frame.type() == FrameType::Beacon){ //kontrolle ob unser frame ein beacon ist
         ledController().flashLed(0);//param = 0 damit led geflasht wird
 
@@ -147,12 +143,20 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver & driver, const uint32_t re
                 if(dataSize > 0)
                 {
                     //_mpdu.printMPDU();
-                    _mpdu.writePDUHeader(0,svgroup,dataSize);//1 for SV,
-
-                    _mpdu.incrementEPDUCount();
-                    _mpdu.printMPDU();
+                    _mpdu.writePDUHeader(0,svgroup,dataSize);//0 for SV,
+                    //_mpdu.printMPDU();
                 }
             }
+        }
+
+        while(!eList.empty()){
+            buff = _mpdu.proxy2mpdu();
+            memcpy(buff.data(), eList.front().data.data(), eList.front().data.length());// data is written into PDU
+            //front() returns a reference to first object
+            //begin() returns an iterator to first object
+            _mpdu.writePDUHeader(1, eList.front().id, eList.front().data.length());// Header of added data is created
+            eList.erase(eList.begin());
+            //_mpdu.printMPDU();
         }
 
 
@@ -163,6 +167,7 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver & driver, const uint32_t re
                 //we send a syncIndication to each registered app
             }
         }
+
 
     }
 

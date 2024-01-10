@@ -14,6 +14,8 @@
 #include "board/accel/accelerometer.h"
 #include "clockwork/clockwork.h"
 
+				#include "app/joystickapplication.h"
+					
 using desenet::sensor::Net;
 
 #ifdef TC_MESHSIM
@@ -47,6 +49,9 @@ public:
     MeshSimBoard & meshSimBoard() const;
 #endif // TC_MESHSIM
 
+		    app::JoystickApplication & joystickApplication() const;
+    board::Joystick & joystick() const;
+												   
     app::AccelerometerApplication & accelerometerApplication() const;
     board::Accelerometer & accelerometer() const;
 

@@ -45,10 +45,10 @@ void MPDU::writePDUHeader(uint8_t type, SvGroup svgroup, size_t dataSize)
     memset(temp.data(),PDU_header, sizeof(PDU_header));
 
     if (length() >= 7) { // Check if the buffer has at least 6 elements
-        (*(buffer() + 6))++; // Increment the 6th element
+        (*(buffer() + 6))++; // Increment the 6th element = nbr of PDU's
     }
 
-    setLength(length() + dataSize + 1); //update new length)
+    setLength(length() + dataSize + 1); //update new length
 }
 
 
@@ -62,10 +62,7 @@ void MPDU::printMPDU()
     std::cout << std::endl; // Print newline after the loop
 }
 
-void MPDU::incrementEPDUCount()
-{
 
-}
 
 void MPDU::clear() {
     memset(buffer()+ Frame::HEADER_SIZE+1,0,1);

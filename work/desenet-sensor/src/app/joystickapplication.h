@@ -24,7 +24,7 @@ public:
 
     // XFReactive implementation
 protected:
-    virtual EventStatus processEvent();		///< Implements the state machine.
+//    virtual EventStatus processEvent();		///< Implements the state machine.
 
 
 private:
