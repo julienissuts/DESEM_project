@@ -16,22 +16,22 @@ C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/c
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.h:46:22:static app::Factory& app::Factory::instance()	8	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:26:1:app::Factory::Factory(int, char**)	32	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:63:6:void app::Factory::buildApplication()	96	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:137:42:void __tcf_0()	8	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:135:33:app::AccelerometerApplication& app::Factory::accelerometerApplication() const	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:144:37:void __tcf_1()	8	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:143:28:app::JoystickApplication& app::Factory::joystickApplication() const	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:149:33:void __tcf_2()	8	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:147:24:board::Accelerometer& app::Factory::accelerometer() const	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:153:19:board::Joystick& app::Factory::joystick() const	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:161:16:void __tcf_3()	8	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:159:7:desenet::sensor::Net& app::Factory::net() const	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:168:22:void __tcf_4()	8	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:166:13:Clockwork& app::Factory::clockwork() const	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:173:24:board::LedController& app::Factory::ledController() const	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:181:26:void __tcf_5()	8	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:179:17:SimpleDisplay& app::Factory::display()	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:189:6:void Factory_init(int, char**)	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:194:6:void Factory_buildApplication()	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:139:42:void __tcf_0()	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:137:33:app::AccelerometerApplication& app::Factory::accelerometerApplication() const	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:147:37:void __tcf_1()	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:146:28:app::JoystickApplication& app::Factory::joystickApplication() const	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:152:33:void __tcf_2()	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:150:24:board::Accelerometer& app::Factory::accelerometer() const	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:158:19:board::Joystick& app::Factory::joystick() const	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:165:16:void __tcf_3()	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:163:7:desenet::sensor::Net& app::Factory::net() const	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:172:22:void __tcf_4()	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:170:13:Clockwork& app::Factory::clockwork() const	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:177:24:board::LedController& app::Factory::ledController() const	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:185:26:void __tcf_5()	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:183:17:SimpleDisplay& app::Factory::display()	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:193:6:void Factory_init(int, char**)	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:198:6:void Factory_buildApplication()	8	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/desenet/address.hpp:47:2:phy::Address<size>::Address(std::initializer_list<unsigned char>) [with unsigned int size = 4]	32	static
 C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\arm-none-eabi\include\c++\11.3.1\bits\shared_ptr_base.h:702:7:std::__shared_count<_Lp>::~__shared_count() [with __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_single]	16	static
 C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/initializer_list:79:7:constexpr const _E* std::initializer_list<_E>::end() const [with _E = unsigned char]	24	static
@@ -44,10 +44,10 @@ C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_algobase.h:335:5:_Iterator std::__niter_wrap(const _Iterator&, _Iterator) [with _Iterator = unsigned char*]	16	static
 C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_algobase.h:486:5:_OI std::__copy_move_a2(_II, _II, _OI) [with bool _IsMove = false; _II = const unsigned char*; _OI = unsigned char*]	24	static
 C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_algobase.h:420:2:static _Tp* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(const _Tp*, const _Tp*, _Tp*) [with _Tp = unsigned char; bool _IsMove = false]	32	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:197:1:void __static_initialization_and_destruction_0(int, int)	40	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/ide-stm32cubeide/../src/app/joystickapplication.h:11:7:app::JoystickApplication::~JoystickApplication()	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/ide-stm32cubeide/../src/app/joystickapplication.h:11:7:virtual app::JoystickApplication::~JoystickApplication()	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:201:1:void __static_initialization_and_destruction_0(int, int)	40	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/ide-stm32cubeide/../src/app/joystickapplication.h:11:11:app::JoystickApplication::~JoystickApplication()	16	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/ide-stm32cubeide/../src/app/joystickapplication.h:11:11:virtual app::JoystickApplication::~JoystickApplication()	16	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/desenet/address.hpp:56:10:phy::Address<size>::~Address() [with unsigned int size = 4]	16	static
 C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/common/mdw/desenet/address.hpp:56:10:phy::Address<size>::~Address() [with unsigned int size = 4]	16	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:197:1:cpp)	8	static
-C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:197:1:cpp)	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:201:1:cpp)	8	static
+C:/Users/stues/Documents/DESEM/7_Project/DESEM_project/work/desenet-sensor/src/app/factory.cpp:201:1:cpp)	8	static

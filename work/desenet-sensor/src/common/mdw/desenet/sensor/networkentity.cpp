@@ -120,6 +120,7 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver &driver, const uint32_t rec
     // TODO: Add your code here
 
     if (frame.type() == FrameType::Beacon)// if the frame is a beacon
+    {
         ledController().flashLed(0); // param = 0 damit led geflasht wird
 
         // mach tram to beacon mit beacon klasse
@@ -170,6 +171,7 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver &driver, const uint32_t rec
         }
     }
 }
+
 // die init von ledController ist im factory.cpp gemacht
 // diese funktion könnte auch durch board::LedController::instance(); ersetzt werden
 board::LedController &NetworkEntity::ledController() const
