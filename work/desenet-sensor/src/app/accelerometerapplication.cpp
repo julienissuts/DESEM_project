@@ -44,6 +44,16 @@ void AccelerometerApplication::svSyncIndication(NetworkTime time)
 	_readAccelerometerValues();
 }
 
+/**
+ * @brief This function is called when the application needs to publish data to the network.
+ * 
+ * If the group parameter matches MY_GROUP, it copies data from _accelValuesSyncArray into svData using the memcpy function.
+ * The function returns the size of _accelValuesSyncArray if data was copied, or 0 otherwise.
+ * 
+ * @param group The data group which needs to be published.
+ * @param svData The buffer into which the accelerometer data will be copied.
+ * @return The size of the data copied into svData, or 0 if no data was copied.
+ */
 desenet::SharedByteBuffer::sizeType AccelerometerApplication::svPublishIndication(desenet::SvGroup group, desenet::SharedByteBuffer & svData)
 {
 	if (group == MY_GROUP)
