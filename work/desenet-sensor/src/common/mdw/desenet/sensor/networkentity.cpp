@@ -92,7 +92,7 @@ void NetworkEntity::evPublishRequest(EvId evid, const SharedByteBuffer &evdata)
 {
     // if the joystick creates an event the event is pushed into the eList
 
-    EventElement event(evid, evdata); // create an event element with the event id and the event data
+    EventElement event(evid, evdata.copy()); // create an event element with the event id and the event data
 
     eList.push_back(event); // push the event into the list
 }
@@ -104,7 +104,7 @@ void NetworkEntity::onTimeSlotSignal(const ITimeSlotManager &timeSlotManager, co
     {
         *_pTransceiver << _mpdu;// send the mpdu, << is an overload operator... the mpdu is sent to what _pTransceiver points to
 
-        _mpdu.clear();// reset the mpdu
+
     }
 }
 
@@ -131,6 +131,8 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver &driver, const uint32_t rec
 
         SharedByteBuffer buff;// create a SharedByteBuffer object
 
+        _mpdu.clear();// reset the mpdu
+
         for (desenet::SvGroup svgroup = 0; svgroup < 16; svgroup++)// for each svgroup
         {
             desenet::SharedByteBuffer::sizeType dataSize = 0;
@@ -150,7 +152,7 @@ void NetworkEntity::onReceive(NetworkInterfaceDriver &driver, const uint32_t rec
             }
         }
 
-        while (!eList.empty())// while the list of events is not empty
+        while (!eList.empty() && (_mpdu.length() <= 35))// while the list of events is not empty, 1 event needs 2bytes space so to fit into 37 bytes it has to be =< 35
         {
             buff = _mpdu.proxy2mpdu();// create a SharedByteBuffer object tied to the mpdu frame
             memcpy(buff.data(), eList.front().data.data(), eList.front().data.length()); // data is written into PDU

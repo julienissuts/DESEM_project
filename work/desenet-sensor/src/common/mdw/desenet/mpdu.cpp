@@ -20,8 +20,11 @@ void MPDU::initialize()
     // set the type of frame to MPDU
     setType(FrameType::MPDU);
 
+
     clear();// reset the PDU count to 0 and set the length of the MPDU to 7
 
+
+    //std::size_t x=  reservedLength();
     // printMPDU();
 }
 

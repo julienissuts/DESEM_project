@@ -4,7 +4,18 @@
 
 using app::JoystickApplication;
 
-JoystickApplication::JoystickApplication() : evDataBuffer(1)
+
+class evJoystickPositionChange : public XFEvent
+{
+public:
+    evJoystickPositionChange(const IJoystick::Position & position) : XFEvent(5, nullptr), position(position)
+    {}
+
+public:
+    IJoystick::Position position;
+};
+
+JoystickApplication::JoystickApplication(): evDataBuffer(1)
 { ////SharedBuffer(sizeType length) 1bytes length
 }
 
@@ -65,8 +76,16 @@ EventStatus JoystickApplication::processEvent()
 
             break;
         case STATE_SENDPOS:
-            sensor::AbstractApplication::evPublishRequest(EVID_JOYSTICK, evDataBuffer); // hier wird das event auf die Liste appended
-            GEN(XFNullTransition());                                                    // generate a null transition
+            if (ev->getEventType() == IXFEvent::Event && ev->getId() == 5)
+            {
+                //SharedByteBuffer evDataBuffer(1);
+                const IJoystick::Position & position = ((evJoystickPositionChange*)getCurrentEvent())->position;
+
+                memcpy(evDataBuffer.data(), &position.position, sizeof(position.position)); // void *memcpy(void *dest, const void *src, size_t n);
+
+                sensor::AbstractApplication::evPublishRequest(EVID_JOYSTICK, evDataBuffer); // hier wird das event auf die Liste appended
+                GEN(XFNullTransition());                                                    // generate a null transition
+            }
             break;
         }
     }
@@ -81,6 +100,7 @@ void JoystickApplication::onPositionChange(IJoystick::Position position)
 {
     std::cout << "onPosition Called";
     std::cout << std::endl;
-    memcpy(evDataBuffer.data(), &position.position, sizeof(position.position)); // void *memcpy(void *dest, const void *src, size_t n);
-    GEN(XFEvent(5));                                                            // generate an event of ID = 5, i chose this id for the joystick event.
+//    memcpy(evDataBuffer.data(), &position.position, sizeof(position.position)); // void *memcpy(void *dest, const void *src, size_t n);
+//    GEN(XFEvent(5));                                                            // generate an event of ID = 5, i chose this id for the joystick event.
+    GEN(evJoystickPositionChange(position));
 }
